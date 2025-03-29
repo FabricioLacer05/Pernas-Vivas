@@ -6,6 +6,8 @@
 
 body {
     text-align: center;
+    width: 100vw;
+    height: 100vh;
 }
 
 /*divs específicas*/
@@ -16,10 +18,17 @@ body {
     padding: 5px;
     border: 1px solid black
 }
-.empty-box {
+.empty-box-3 {
+    width: 125px;
+    height: 75px;
+    border: 1px solid black;
+    margin:auto;
+}
+.empty-box-2 {
     width: 50px;
     height: 50px;
-    border: 1px solid black
+    border: 1px solid black;
+    margin:auto;
 }
 
 /*Botões*/
@@ -33,15 +42,41 @@ button {
     width: 30%;
     height: 30%;
 }
-.empty-box img {
+.empty-box-2 img {
     width: 100%;
     height: 100%;
 }
+.empty-box-3 img {
+    width: 100%;
+    height: 100%;
+}
+.part-box-3 {
+    width: 100%;
+    height: 100%;
+    margin:auto;
+}
+.part-box-2 {
+    width: 100%;
+    height: 100%;
+    margin:auto;
+}
 .parts img {
-    width: 10%;
-    height: 10%;
+    width: 20%;
+    height: 20%;
 }
 button img {
-    width: 25%;
-    height: 25%;
+    width: 50%;
+    height: 50%;
+}
+#question-04 button img {
+    width: 50%;
+    height: 50%;
+}
+#question-05 button img {
+    width: 100%;
+    height: 100%;
+}
+#question-06 button img {
+    width: 100%;
+    height: 100%;
 }

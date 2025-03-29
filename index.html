@@ -65,23 +65,23 @@
                 <div id="mounted-perna-area"></div>
                 <p>Mexilhão-marrom ( <i>Perna perna</i> )</p>
 
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="byssus-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="bisso-put" src="res/Bisso.png" hidden></div>
+                <div class="empty-box-outer-2">
+                    <div class="empty-box-2" id="byssus-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="bisso-put" src="res/Bisso.png" hidden></div>
                     <p class="empty-box-legend">Bisso</p>
                 </div>
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="valve-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="valva-put" src="res/Valva.png" hidden></div>
+                <div class="empty-box-outer-2">
+                    <div class="empty-box-2" id="valve-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="valva-put" src="res/Valva.png" hidden></div>
                     <p class="empty-box-legend">Valva</p>
                 </div>
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="foot-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="pe-put" src="res/Pé.png" hidden></div>
+                <div class="empty-box-outer-2">
+                    <div class="empty-box-2" id="foot-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="pe-put" src="res/Pé.png" hidden></div>
                     <p class="empty-box-legend">Pé</p>
                 </div>
 
                 <div class="parts">
-                    <img class="part-box" id="bisso" src="res/Bisso.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box" id="valva" src="res/Valva.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box" id="pe" src="res/Pé.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-2" id="bisso" src="res/Bisso.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-2" id="valva" src="res/Valva.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-2" id="pe" src="res/Pé.png" onclick="pickUpPart(this.getAttribute('id'))">
                 </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
@@ -97,30 +97,35 @@
         <div class="question-box" id="question-03" hidden>
             <div class="question-box-header">
                 <h3>Indique as partes de dentro do mexilhão!</h3>
+                <p>Coloque as partes nas caixas abaixo da esquerda para a direita, seguindo a numeração da imagem</p>
             </div>
             <div class="question-box-body">
                 <img src="res/Viridis dentro.png">
                 <p>Mexilhão-verde ( <i>Perna viridis</i> )</p>
-                <p class="font-legend">Fonte da imagem: <i>...</i></p>
+                <!--<p class="font-legend">Fonte da imagem: <i>...</i></p>-->
 
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="mantle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="manto-put" src="res/Leg Manto.png" hidden></div>
+                <div class="empty-box-outer-3">
+                    <div class="empty-box-3" id="mantle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="manto-put" src="res/Leg Manto.png" hidden></div>
+                    <p>1</p>
                 </div>
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="gills-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="branquias-put" src="res/Leg Branquias.png" hidden></div>
+                <div class="empty-box-outer-3">
+                    <div class="empty-box-3" id="gills-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="branquias-put" src="res/Leg Branquias.png" hidden></div>
+                    <p>2</p>
                 </div>
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="digestiveGland-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="glandulaDigestiva-put" src="res/Leg Glandula.png" hidden></div>
+                <div class="empty-box-outer-3">
+                    <div class="empty-box-3" id="digestiveGland-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="glandulaDigestiva-put" src="res/Leg Glandula.png" hidden></div>
+                    <p>3</p>
                 </div>
-                <div class="empty-box-outer">
-                    <div class="empty-box" id="adductorMuscle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="musculoAdutor-put" src="res/Leg Musculo.png" hidden></div>
+                <div class="empty-box-outer-3">
+                    <div class="empty-box-3" id="adductorMuscle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="musculoAdutor-put" src="res/Leg Musculo.png" hidden></div>
+                    <p>4</p>
                 </div>
 
                 <div class="parts">
-                    <img class="part-box" id="manto" src="res/Leg Manto.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box" id="branquias" src="res/Leg Branquias.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box" id="glandulaDigestiva" src="res/Leg Glandula.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box" id="musculoAdutor" src="res/Leg Musculo.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-3" id="manto" src="res/Leg Manto.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-3" id="branquias" src="res/Leg Branquias.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-3" id="glandulaDigestiva" src="res/Leg Glandula.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box-3" id="musculoAdutor" src="res/Leg Musculo.png" onclick="pickUpPart(this.getAttribute('id'))">
                 </div>
             </div>
             <div class="question-box-footer">

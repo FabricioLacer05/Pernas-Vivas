@@ -17,20 +17,25 @@
 
     Atividade web programada por Fabrício Lacerda
     ">
+    <link rel="icon" href="res/Valva.png">
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/game-script.js" defer></script>
 </head>
 <body>
+    <!--Caixa inicial-->
     <div id="start-box">
-        <h1>Jogo Pernas Vivas</h1>
+        <h1 id="game-title">O Desafio dos Mexilhões</h1>
         <button id="start-game-button" onclick="startGame()">Começar!</button>
     </div>
 
+    <!--Caixa de questões-->
     <div id="main-box" hidden>
         <div id="main-box-header" hidden>
             <h2 id="questionNumber">Questão número 1</h2>
-            <h3 id="points">Pontos: 0</h3>
-            <h5 id="wrongAnswers">Erros: 0</h5>
+            <span>
+                <h4 id="points">Pontos: 0</h4>
+                <h4 id="wrongAnswers">Erros: 0</h4>
+            </span>
         </div>
 
         <div class="question-box" id="question-01" hidden>
@@ -38,84 +43,85 @@
                 <h3>Qual o nome deste mexilhão?</h3>
             </div>
             <div class="question-box-body">
-                <img src="res/PlaceholderPerna.png">
+                <img src="res/Perna.png">
             </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
                     <h4>Clique no mexilhão certo:</h4>
                 </div>
                 <div class="question-box-footer-inputbody">
-                        <button class="answer-button" id="answer-1-1" value="VERDE" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/PlaceholderViridis.png"><p>Verde</p></button>
-                        <button class="answer-button" id="answer-1-2" value="MARROM" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/PlaceholderPerna.png"><p>Marrom</p></button>
-                        <button class="answer-button" id="answer-1-3" value="DOURADO" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/PlaceholderParts.png"><p>Dourado</p></button>
+                        <button class="answer-button" id="answer-1-1" value="VERDE" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/Viridis.png"><p>Verde</p></button>
+                        <button class="answer-button" id="answer-1-2" value="MARROM" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/Perna.png"><p>Marrom</p></button>
+                        <button class="answer-button" id="answer-1-3" value="DOURADO" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/Fortunei.png"><p>Dourado</p></button>
                 </div>
             </div>
         </div>
 
         <div class="question-box" id="question-02" hidden>
             <div class="question-box-header">
-                <h3>Arraste as partes de fora do mexilhão!</h3>
+                <h3>Monte um mexilhão!</h3>
             </div>
             <div class="question-box-body">
-                <img src="res/PlaceholderViridis.png">
-                <p>Mexilhão-verde ( <i>Perna viridis</i> )</p>
+                <div id="mounted-perna-area"></div>
+                <p>Mexilhão-marrom ( <i>Perna perna</i> )</p>
 
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="byssus-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="bisso-put" src="res/PlaceholderParts.png" hidden></div>
+                    <div class="empty-box" id="byssus-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="bisso-put" src="res/Bisso.png" hidden></div>
                     <p class="empty-box-legend">Bisso</p>
                 </div>
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="valve-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="valva-put" src="res/PlaceholderParts.png" hidden></div>
+                    <div class="empty-box" id="valve-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="valva-put" src="res/Valva.png" hidden></div>
                     <p class="empty-box-legend">Valva</p>
                 </div>
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="foot-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="pe-put" src="res/PlaceholderParts.png" hidden></div>
+                    <div class="empty-box" id="foot-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="pe-put" src="res/Pé.png" hidden></div>
                     <p class="empty-box-legend">Pé</p>
                 </div>
 
-                <img id="bisso" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
-                <img id="valva" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
-                <img id="pe" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
-            </div>
+                <div class="parts">
+                    <img class="part-box" id="bisso" src="res/Bisso.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box" id="valva" src="res/Valva.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box" id="pe" src="res/Pé.png" onclick="pickUpPart(this.getAttribute('id'))">
+                </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
                     <h4>Clique no botão abaixo para conferir a sua resposta</h4>
                 </div>
                 <div class="question-box-footer-inputbody">
                     <button onclick="checkAnswer(2, null)">Eu fiz certo?</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="question-box" id="question-03" hidden>
             <div class="question-box-header">
-                <h3>Arraste as partes de dentro do mexilhão!</h3>
+                <h3>Indique as partes de dentro do mexilhão!</h3>
             </div>
             <div class="question-box-body">
-                <img src="res/PlaceholderPerna.png">
-                <p>Mexilhão-marrom ( <i>Perna perna</i> )</p>
+                <img src="res/Viridis dentro.png">
+                <p>Mexilhão-verde ( <i>Perna viridis</i> )</p>
+                <p class="font-legend">Fonte da imagem: <i>...</i></p>
 
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="mantle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="manto-put" src="res/PlaceholderParts.png" hidden></div>
-                    <p class="empty-box-legend">Manto</p>
+                    <div class="empty-box" id="mantle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="manto-put" src="res/Leg Manto.png" hidden></div>
                 </div>
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="gills-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="branquias-put" src="res/PlaceholderParts.png" hidden></div>
-                    <p class="empty-box-legend">Brânquias</p>
+                    <div class="empty-box" id="gills-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="branquias-put" src="res/Leg Branquias.png" hidden></div>
                 </div>
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="digestiveGland-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="glandulaDigestiva-put" src="res/PlaceholderParts.png" hidden></div>
-                    <p class="empty-box-legend">Glândula digestiva</p>
+                    <div class="empty-box" id="digestiveGland-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="glandulaDigestiva-put" src="res/Leg Glandula.png" hidden></div>
                 </div>
                 <div class="empty-box-outer">
-                    <div class="empty-box" id="adductorMuscle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="musculoAdutor-put" src="res/PlaceholderParts.png" hidden></div>
-                    <p class="empty-box-legend">Músculo adutor</p>
+                    <div class="empty-box" id="adductorMuscle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="musculoAdutor-put" src="res/Leg Musculo.png" hidden></div>
                 </div>
 
-                <img id="manto" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
-                <img id="branquias" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
-                <img id="glandulaDigestiva" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
-                <img id="musculoAdutor" src="res/PlaceholderParts.png" onclick="pickUpPart(this.getAttribute('id'))">
+                <div class="parts">
+                    <img class="part-box" id="manto" src="res/Leg Manto.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box" id="branquias" src="res/Leg Branquias.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box" id="glandulaDigestiva" src="res/Leg Glandula.png" onclick="pickUpPart(this.getAttribute('id'))">
+                    <img class="part-box" id="musculoAdutor" src="res/Leg Musculo.png" onclick="pickUpPart(this.getAttribute('id'))">
+                </div>
             </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
@@ -131,17 +137,15 @@
             <div class="question-box-header">
                 <h3>Quais espécies de mexilhão são consideradas invasoras?</h3>
             </div>
-            <div class="question-box-body">
-            </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
-                    <h4>Selecione a opção que tem apenas espécies invasoras:</h4>
+                    <h4>Selecione a opção só com espécies invasoras:</h4>
                 </div>
                 <div class="question-box-footer-inputbody">
-                    <button class="answer-button" id="answer-4-1" value="MARROM E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/PlaceholderPerna.png"><img src="res/PlaceholderViridis.png"><p>Marrom e verde</p></button>
-                    <button class="answer-button" id="answer-4-2" value="DOURADO E MARROM" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/PlaceholderParts.png"><img src="res/PlaceholderPerna.png"><p>Dourado e marrom</p></button>
-                    <button class="answer-button" id="answer-4-3" value="VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/PlaceholderViridis.png"><p>Apenas o verde</p></button>
-                    <button class="answer-button" id="answer-4-4" value="DOURADO E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/PlaceholderParts.png"><img src="res/PlaceholderViridis.png"><p>Dourado e verde</p></button>
+                    <button class="answer-button" id="answer-4-1" value="MARROM E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Perna.png"><img src="res/Viridis.png"><p>Marrom e verde</p></button>
+                    <button class="answer-button" id="answer-4-2" value="DOURADO E MARROM" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Fortunei.png"><img src="res/Perna.png"><p>Dourado e marrom</p></button>
+                    <button class="answer-button" id="answer-4-3" value="VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Viridis.png"><p>Apenas o verde</p></button>
+                    <button class="answer-button" id="answer-4-4" value="DOURADO E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Fortunei.png"><img src="res/Viridis.png"><p>Dourado e verde</p></button>
                 </div>
             </div>
         </div>
@@ -149,8 +153,6 @@
         <div class="question-box" id="question-05" hidden>
             <div class="question-box-header">
                 <h3>Onde o mexilhão-marrom vive naturalmente?</h3>
-            </div>
-            <div class="question-box-body">
             </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
@@ -170,8 +172,6 @@
             <div class="question-box-header">
                 <h3>Onde o mexilhão-verde vive naturalmente?</h3>
             </div>
-            <div class="question-box-body">
-            </div>
             <div class="question-box-footer">
                 <div class="question-box-footer-header">
                     <h4>Selecione uma opção:</h4>
@@ -187,12 +187,14 @@
         </div>
     </div>
 
+    <!--Caixa de mensagens-->
     <div id="message-box" hidden>
         <p id="message"></p>
     </div>
 
+    <!--Caixa de fim de jogo-->
     <div id="end-box" hidden>
-        <h1>Fim de jogo!</h1>
+        <h1 id="end-game-title">Fim de jogo!</h1>
         <p id="end-game-points"></p>
         <h3>Muito obrigado por nos visitar! :)</h3>
         <button id="restart-game-button" onclick="restartGame()">Jogar de novo!</button>

@@ -103,7 +103,9 @@ function showQuestion(questionNumber) {
     document.getElementById("questionNumber").textContent = "Questão número " + currentQuestion;
     if(num >= 1 && num < 7) {
         document.getElementById("question-0" + currentQuestion).toggleAttribute("hidden", false);
-        document.getElementById("question-0" + (currentQuestion - 1)).toggleAttribute("hidden", true);
+        if(num > 1) {
+            document.getElementById("question-0" + (currentQuestion - 1)).toggleAttribute("hidden", true);
+        }
         pointMultiplication = 4;
     } else if(num > 6) {
         endGame();
@@ -117,14 +119,14 @@ function showQuestion(questionNumber) {
 
 // Adiciona e atualiza os pontos caso o usuário acerte uma questão :)
 function addPoints() {
-    points += (50 * pointMultiplication);
+    points += (5 * pointMultiplication);
     document.getElementById("points").textContent = "Pontos: " + points;
     document.getElementById("wrongAnswers").textContent = "Erros: " + wrongAnswers;
 }
 
 // Penaliza a pontuação por errar
 function penalize() {
-    if(pointMultiplication > 1) {
+    if(pointMultiplication > -1) {
         pointMultiplication--;
     }
     wrongAnswers++;

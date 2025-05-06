@@ -1,5 +1,125 @@
+/*Elementos gerais*/
+:root {
+    --firstColor: hsl(202, 90%, 75%);
+    --secondColor: hsl(202, 90%, 60%);
+    --accentColor: hsl(187, 100%, 55%);
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Candara", "Trebuchet MS", "Serif", "Arial", "Times new Roman";
 }
+
+body {
+    background-color: var(--firstColor);
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    background-color: var(--accentColor);
+    cursor: pointer;
+}
+
+/*Caixa inicial*/
+#start-box {
+    text-align: center;
+    border-radius: 30px;
+    background-color: var(--secondColor);
+    width: 60vw;
+    height: 75vh;
+    margin: auto;
+    margin-top: 20vh;
+    padding: 5px;
+}
+
+#game-title {
+    font-size: 3em;
+    padding: 10%;
+    letter-spacing: 1.5px;
+}
+
+#start-game-button {
+    font-size: xx-large;
+    border-radius: 30px;
+    height: 25%;
+    width: 90%;
+    margin-top: 30%;
+}
+
+/*Caixa principal - geral*/
+#main-box {
+    background-color: var(--secondColor);
+    width: 90vw;
+    height: fit-content;
+    border-radius: 30px;
+    margin: auto;
+    margin-top: 20vh;
+    padding: 5px;
+}
+
+/*Caixa principal - cabeçalho*/
+#main-box-header {
+    display: flex;
+    margin: 2% auto 2%;
+    padding: 10px;
+    width: auto;
+    height: fit-content;
+    border: 2px solid var(--accentColor);
+    border-radius: 30px;
+}
+
+#main-box-header h2 {
+    margin: auto 1% auto;
+    font-size: 2em;
+}
+
+#main-box-header h4 {
+    margin: auto;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/*Caixa principal - caixa de questões*/
+#question-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto auto 2%;
+    padding: 20px;
+    width: 95%;
+    height: fit-content;
+    border: 2px solid var(--accentColor);
+    border-radius: 30px;
+    text-align: center;
+}
+
+#question-header {
+
+}
+
+#question-body {
+
+}
+
+#question-footer {
+
+}
+
+#question-footer-header {
+
+}
+
+#question-footer-title {
+
+}
+
+#question-footer-input {
+    
+}
+
+/*Caixa de mensagens*/
+
+/*Caixa final*/

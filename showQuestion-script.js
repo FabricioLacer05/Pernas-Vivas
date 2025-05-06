@@ -128,9 +128,10 @@ function showQuestion(num) {
                 box.innerHTML =
                 `
                     <div class="question-box-header">
-                        <h3>Monte um mexilhão!</h3>
+                        <h3>Monte a anatomia extterna do mexilhão-marrom!</h3>
                     </div>
                     <div class="question-box-body">
+                        <p>Clique nas peças abaixo e clique nas áreas vazias onde você quer colocar a peça. Clique em outra peça para soltá-la.</p>
                         <div id="mounted-perna-area"></div>
                         <p>Mexilhão-marrom ( <i>Perna perna</i> )</p>
 
@@ -157,14 +158,128 @@ function showQuestion(num) {
                             <h4>Clique no botão abaixo para confirmar a sua resposta</h4>
                         </div>
                         <div class="question-box-footer-inputbody">
-                            <button onclick="checkAnswer(6, null)">Eu montei o meu mexilhão</button>
-                            </div>
+                            <button onclick="checkAnswer(7, null)">Eu montei certo?</button>
+                            <button onclick="checkAnswer(null, null)">Quero pular esta atividade</button>
                         </div>
                     </div>
                 `
                 break;
             case 8:
-                // TODO: Fazer questão - Encontrar mexilhão nativo
+                box.innerHTML =
+                `
+                    <div class="question-box-header">
+                            <h3>Encontre o mexilhão nativo entre os invasores!</h3>
+                    </div>
+                    <div class="question-box-body">
+                        
+                    <div class="question-box-footer">
+                        <div class="question-box-footer-header">
+                            <h4></h4>
+                        </div>
+                        <div class="question-box-footer-inputbody">
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="native-option" value="NATIVO" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Perna.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                            <button class="invader-option" value="INVASOR" onclick="checkAnswer(8, this.getAttribute('value'))"><img src="./res/imgs/Viridis.png"></button>
+                        </div>
+                    </div>
+                `
                 break;
         }
         document.getElementById("questionNumber").textContent = "Questão número " + currQuestion;

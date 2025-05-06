@@ -1,11 +1,10 @@
 // Variáveis gerais
-const QUESTION_ANSWERS = ["MARROM", "VERDE", "DOURADO E VERDE", "MARROM", "BRASIL", "INDOPACIFICO", ["BISSO", "VALVA", "PE"]];
+const QUESTION_ANSWERS = ["MARROM", "VERDE", "DOURADO E VERDE", "MARROM", "BRASIL", "INDOPACIFICO", ["BISSO", "VALVA", "PE"], "NATIVO"];
 const NUMBER_OF_QUESTIONS = 8;
 let points = 0, wrngAnswers = 0;
 let currQuestion = 1;
 // Variáveis da questão 7
-let isPartPicked = false, partPickedUp = "";
-let box1Fill = false, box2Fill = false, box3Fill = false, question7Parts = [];
+let isPartPicked = false, partPicked = "", lastPartPicked = "", parts = [];
 
 // Configura o jogo quando a página é carregada
 function loadGame() {
@@ -71,13 +70,17 @@ function checkAnswer(queNum, optNum) {
             ans = QUESTION_ANSWERS[5];
             break;
         case 7:
+            val = parts.toString();
             ans = QUESTION_ANSWERS[6].toString();
             break;
         case 8:
-            // Questão sendo feita
+            ans = QUESTION_ANSWERS[7];
+            break;
+        default:
+            alert("Questão pulada");
             break;
     }
-    if(val == ans && queNum != 7 || question7Parts.toString() == ans && queNum == 7) {
+    if(val == ans) {
         playSFX("bertrof_correct.wav");
         showMessage(true)
         update(true);
@@ -92,47 +95,37 @@ function checkAnswer(queNum, optNum) {
 function pickUpPart(part) {
     if(!isPartPicked) {
         isPartPicked = true;
-        partPickedUp = part;
-        //displayElement(document.getElementById(partPickedUp), false);
-        alert("Pegou " + partPickedUp);
+        partPicked = part;
+        alert("Pegou " + part);
     } else {
-        alert("Já está segurando uma parte!");
+        lastPartPicked = partPicked;
+        partPicked = null;
+        isPartPicked = false;
+        alert("Soltou " + lastPartPicked);
     }
 }
 
 // (Questão 7) "Coloca" uma parte numa das caixas vazias
 function putPartInBox(box) {
     if(isPartPicked) {
-        let boxNum;
         switch(box) {
             case "1":
-                    boxNum = 1;
-                    question7Parts[0] = partPickedUp.toUpperCase();
+                    parts[0] = partPicked.toUpperCase();
                 break;
             case "2":
-                    boxNum = 2;
-                    question7Parts[1] = partPickedUp.toUpperCase();
+                    parts[1] = partPicked.toUpperCase();
                 break;
             case "3":
-                    boxNum = 3;
-                    question7Parts[2] = partPickedUp.toUpperCase();
+                    parts[2] = partPicked.toUpperCase();
                 break;
         }
-        document.getElementById(boxNum + "-put").setAttribute("src", "./res/imgs/" + partPickedUp + ".png");
-        /*switch(partPickedUp) {
-            case "bisso":
-                document.getElementById(box).setAttribute("src", "./res/imgs/Bisso.png");
-                break;
-            case "valva":
-                document.getElementById(box).setAttribute("src", "./res/imgs/Valva.png");
-                break;
-            case "pe":
-                document.getElementById(box).setAttribute("src", "./res/imgs/Pe.png");
-                break;
-        }*/
-        alert("Colocou " + partPickedUp + " na caixa " + box);
+        document.getElementById(box + "-put").setAttribute("src", "./res/imgs/" + partPicked + ".png");
+        alert("Colocou " + partPicked + " na caixa " + box);
         isPartPicked = false;
-        partPickedUp = "";
+        lastPartPicked = partPicked;
+        partPicked = "";
+    } else {
+        alert("Selecione uma das peças abaixo para colocar aqui!");
     }
 }
 
@@ -155,13 +148,13 @@ function setPoints(isAnswerCorrect) {
 
 // Mostra a mensagem que indica se o usuário acertou ou errou uma questão
 function showMessage(isAnswerCorrect) {
-    let message = "";
+    let mes = "";
     if(isAnswerCorrect) {
-        message = "Resposta correta! :D";
+        mes = "Resposta correta! :D";
     } else {
-        message = "Respota errada! :(";
+        mes = "Respota errada! :(";
     }
-    document.getElementById("message").innerText = message;
+    document.getElementById("message").innerText = mes;
     displayElement("message-box", true);
     setTimeout(() => {displayElement("message-box", false)}, 3000);
 }

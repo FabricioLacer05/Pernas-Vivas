@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!--Metadados-->
     <title>O Desafio dos Mexilhões</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,188 +18,64 @@
 
     Atividade web programada por Fabrício Lacerda
     ">
-    <link rel="icon" href="res/Valva.png">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/game-script.js" defer></script>
+    <!--Links-->
+    <link rel="icon" href="res/imgs/Icon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="game-script.js" defer></script>
+    <script src="showQuestion-script.js" defer></script>
+    <script src="audio-script.js" defer></script>
+
+    <!--Áudio - Músicas e efeitos sonoros-->
+    <audio id="music" loop>
+        <source src="" type="audio/wav">
+        Seu navegador não suporta áudio em HTML
+    </audio>
+    <audio id="sfx">
+        <!--Controlado por script-->
+        <source src="" type="audio/wav">
+        Seu navegador não suporta áudio em HTML
+    </audio>
 </head>
-<body>
+<body onload="loadGame()">
     <!--Caixa inicial-->
     <div id="start-box">
         <h1 id="game-title">O Desafio dos Mexilhões</h1>
         <button id="start-game-button" onclick="startGame()">Começar!</button>
     </div>
 
-    <!--Caixa de questões-->
-    <div id="main-box" hidden>
-        <div id="main-box-header" hidden>
+    <!--Caixa principal-->
+    <div id="main-box">
+        <!--Cabeçalho da caixa principal-->
+        <div id="main-box-header">
             <h2 id="questionNumber">Questão número 1</h2>
-            <span>
-                <h4 id="points">Pontos: 0</h4>
-                <h4 id="wrongAnswers">Erros: 0</h4>
-            </span>
+            <h4 id="points">Pontos: 0</h4>
+            <h4 id="wrongAnswers">Erros: 0</h4>
         </div>
 
-        <div class="question-box" id="question-01" hidden>
-            <div class="question-box-header">
-                <h3>Qual o nome deste mexilhão?</h3>
+        <!--Caixa de quetões-->
+        <div id="question-box">
+            <div id="question-header">
+                <h3 id="question-title"></h3>
             </div>
-            <div class="question-box-body">
-                <img src="res/Perna.png">
+            <div id="question-body">
             </div>
-            <div class="question-box-footer">
-                <div class="question-box-footer-header">
-                    <h4>Clique no mexilhão certo:</h4>
+            <div id="question-footer">
+                <div id="question-footer-header">
+                    <h4 id="qustion-footer-title"></h4>
                 </div>
-                <div class="question-box-footer-inputbody">
-                        <button class="answer-button" id="answer-1-1" value="VERDE" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/Viridis.png"><p>Verde</p></button>
-                        <button class="answer-button" id="answer-1-2" value="MARROM" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/Perna.png"><p>Marrom</p></button>
-                        <button class="answer-button" id="answer-1-3" value="DOURADO" onclick="checkAnswer(1, this.getAttribute('value'))"><img src="res/Fortunei.png"><p>Dourado</p></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="question-box" id="question-02" hidden>
-            <div class="question-box-header">
-                <h3>Monte um mexilhão!</h3>
-            </div>
-            <div class="question-box-body">
-                <div id="mounted-perna-area"></div>
-                <p>Mexilhão-marrom ( <i>Perna perna</i> )</p>
-
-                <div class="empty-box-outer-2">
-                    <div class="empty-box-2" id="byssus-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="bisso-put" src="res/Bisso.png" hidden></div>
-                    <p class="empty-box-legend">Bisso</p>
-                </div>
-                <div class="empty-box-outer-2">
-                    <div class="empty-box-2" id="valve-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="valva-put" src="res/Valva.png" hidden></div>
-                    <p class="empty-box-legend">Valva</p>
-                </div>
-                <div class="empty-box-outer-2">
-                    <div class="empty-box-2" id="foot-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="pe-put" src="res/Pé.png" hidden></div>
-                    <p class="empty-box-legend">Pé</p>
-                </div>
-
-                <div class="parts">
-                    <img class="part-box-2" id="bisso" src="res/Bisso.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box-2" id="valva" src="res/Valva.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box-2" id="pe" src="res/Pé.png" onclick="pickUpPart(this.getAttribute('id'))">
-                </div>
-            <div class="question-box-footer">
-                <div class="question-box-footer-header">
-                    <h4>Clique no botão abaixo para conferir a sua resposta</h4>
-                </div>
-                <div class="question-box-footer-inputbody">
-                    <button onclick="checkAnswer(2, null)">Eu fiz certo?</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="question-box" id="question-03" hidden>
-            <div class="question-box-header">
-                <h3>Indique as partes de dentro do mexilhão!</h3>
-                <p>Coloque as partes nas caixas abaixo da esquerda para a direita, seguindo a numeração da imagem</p>
-            </div>
-            <div class="question-box-body">
-                <img src="res/Viridis dentro.png">
-                <p>Mexilhão-verde ( <i>Perna viridis</i> )</p>
-                <!--<p class="font-legend">Fonte da imagem: <i>...</i></p>-->
-
-                <div class="empty-box-outer-3">
-                    <div class="empty-box-3" id="mantle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="manto-put" src="res/Leg Manto.png" hidden></div>
-                    <p>1</p>
-                </div>
-                <div class="empty-box-outer-3">
-                    <div class="empty-box-3" id="gills-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="branquias-put" src="res/Leg Branquias.png" hidden></div>
-                    <p>2</p>
-                </div>
-                <div class="empty-box-outer-3">
-                    <div class="empty-box-3" id="digestiveGland-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="glandulaDigestiva-put" src="res/Leg Glandula.png" hidden></div>
-                    <p>3</p>
-                </div>
-                <div class="empty-box-outer-3">
-                    <div class="empty-box-3" id="adductorMuscle-box" onclick="putPartInBox(this.getAttribute('id'))"><img id="musculoAdutor-put" src="res/Leg Musculo.png" hidden></div>
-                    <p>4</p>
-                </div>
-
-                <div class="parts">
-                    <img class="part-box-3" id="manto" src="res/Leg Manto.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box-3" id="branquias" src="res/Leg Branquias.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box-3" id="glandulaDigestiva" src="res/Leg Glandula.png" onclick="pickUpPart(this.getAttribute('id'))">
-                    <img class="part-box-3" id="musculoAdutor" src="res/Leg Musculo.png" onclick="pickUpPart(this.getAttribute('id'))">
-                </div>
-            </div>
-            <div class="question-box-footer">
-                <div class="question-box-footer-header">
-                    <h4>Clique no botão abaixo para conferir a sua resposta</h4>
-                </div>
-                <div class="question-box-footer-inputbody">
-                    <button onclick="checkAnswer(3, null)">Eu fiz certo?</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="question-box" id="question-04" hidden>
-            <div class="question-box-header">
-                <h3>Quais espécies de mexilhão são consideradas invasoras?</h3>
-            </div>
-            <div class="question-box-footer">
-                <div class="question-box-footer-header">
-                    <h4>Selecione a opção só com espécies invasoras:</h4>
-                </div>
-                <div class="question-box-footer-inputbody">
-                    <button class="answer-button" id="answer-4-1" value="MARROM E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Perna.png"><img src="res/Viridis.png"><p>Marrom e verde</p></button>
-                    <button class="answer-button" id="answer-4-2" value="DOURADO E MARROM" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Fortunei.png"><img src="res/Perna.png"><p>Dourado e marrom</p></button>
-                    <button class="answer-button" id="answer-4-3" value="VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Viridis.png"><p>Apenas o verde</p></button>
-                    <button class="answer-button" id="answer-4-4" value="DOURADO E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/Fortunei.png"><img src="res/Viridis.png"><p>Dourado e verde</p></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="question-box" id="question-05" hidden>
-            <div class="question-box-header">
-                <h3>Onde o mexilhão-marrom vive naturalmente?</h3>
-            </div>
-            <div class="question-box-footer">
-                <div class="question-box-footer-header">
-                    <h4>Selecione uma opção:</h4>
-                </div>
-                <div class="question-box-footer-inputbody">
-                    <button class="answer-button" id="answer-5-1" value="BRASIL" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/costa-brasil.png"><p>Costa do Brasil</p></button>
-                    <button class="answer-button" id="answer-5-2" value="INDOPACIFICO" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/indo-pacifico.png"><p>Oceanos Índico e Pacífico</p></button>
-                    <button class="answer-button" id="answer-5-3" value="MEDITERRANEO" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/mediterraneo.png"><p>Mar Mediterrâneo</p></button>
-                    <button class="answer-button" id="answer-5-4" value="BACIAPARANA" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/bacia-parana.png"><p>Bacia do Paraná, principalmente</p></button>
-                    <p class="font-legend">Fonte das imagens: Google Earth</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="question-box" id="question-06" hidden>
-            <div class="question-box-header">
-                <h3>Onde o mexilhão-verde vive naturalmente?</h3>
-            </div>
-            <div class="question-box-footer">
-                <div class="question-box-footer-header">
-                    <h4>Selecione uma opção:</h4>
-                </div>
-                <div class="question-box-footer-inputbody">
-                    <button class="answer-button" id="answer-6-1" value="BRASIL" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/costa-brasil.png"><p>Costa do Brasil</p></button>
-                    <button class="answer-button" id="answer-6-2" value="INDOPACIFICO" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/indo-pacifico.png"><p>Oceanos Índico e Pacífico</p></button>
-                    <button class="answer-button" id="answer-6-3" value="MEDITERRANEO" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/mediterraneo.png"><p>Mar Mediterrâneo</p></button>
-                    <button class="answer-button" id="answer-6-4" value="BACIAPARANA" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/bacia-parana.png"><p>Bacia do Paraná, principalmente</p></button>
-                    <p class="font-legend">Fonte das imagens: Google Earth</p>
+                <div id="question-footer-input">
                 </div>
             </div>
         </div>
     </div>
 
     <!--Caixa de mensagens-->
-    <div id="message-box" hidden>
+    <div id="message-box">
         <p id="message"></p>
     </div>
 
     <!--Caixa de fim de jogo-->
-    <div id="end-box" hidden>
+    <div id="end-box">
         <h1 id="end-game-title">Fim de jogo!</h1>
         <p id="end-game-points"></p>
         <h3>Muito obrigado por nos visitar! :)</h3>

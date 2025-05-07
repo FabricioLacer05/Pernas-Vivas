@@ -282,7 +282,7 @@ function showQuestion(num) {
                 `
                 break;
         }
-        document.getElementById("questionNumber").textContent = "Questão número " + currQuestion;
+        document.getElementById("questionNumber").textContent = "Questão " + currQuestion;
     } else {
         endGame();
     }

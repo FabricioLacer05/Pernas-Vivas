@@ -13,6 +13,9 @@
 
 body {
     background-color: var(--firstColor);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 button {
@@ -31,8 +34,7 @@ button:hover {
     background-color: var(--secondColor);
     width: 60vw;
     height: 75vh;
-    margin: auto;
-    margin-top: 20vh;
+    margin: 12vh auto 1vh;
     padding: 5px;
 }
 
@@ -57,100 +59,52 @@ button:hover {
     width: 90vw;
     height: fit-content;
     border-radius: 30px;
-    margin: auto;
-    margin-top: 15vh;
+    margin: 12vh auto 1vh;
     padding: 2px;
 }
 
 /*Caixa principal - cabeçalho*/
-#main-box-header {
-    display: flex;
-    margin: 1% auto 1%;
-    padding: 10px;
-    width: 85%;
-    height: fit-content;
-    border: 2px solid var(--accentColor);
-    border-radius: 25px;
-}
-
-#main-box-header h2 {
-    margin: auto 1% auto;
-    font-size: 1.5em;
-}
-
-#main-box-header h4 {
-    margin: auto;
-    font-size: 1.2em;
-    text-align: center;
-}
 
 /*Caixa principal - caixa de questões*/
-#question-box {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto auto 1%;
-    padding: 20px;
-    width: 85%;
-    height: fit-content;
-    border: 2px solid var(--accentColor);
-    border-radius: 30px;
-}
-
-#question-header {
-    width: 100%;
-    height: 2%;
-    text-align: center;
-    margin-bottom: 2%;
-}
-
-#question-title {
-    font-size: 2em;
-}
-
-#question-body {
-    height: fit-content;
-    width: auto;
-    text-align: center;
-}
-
-#question-body img {
-    width: 75%;
-    border-radius: 30px;
-}
-
-#question-footer {
-    width: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-
-#question-footer-header {
-    height: 10%;
-    margin-bottom: 2%;
-}
-
-#question-footer-title {
-    font-size: 1.2em;
-}
-
-#question-footer-input {
-    height: fit-content;
-}
-
-#question-footer-input button {
-    width: 80%;
-    height: fit-content;
-    border-radius: 10px;
+#mute-audio {
+    width: fit-content;
+    height: 25%;
+    border-radius: 15px;
     padding: 10px;
-    margin-top: 3%;
-    text-align: center;
-}
-
-#question-footer-input button img {
-    width: 40%;
+    margin: auto;
 }
 
 /*Caixa de mensagens*/
 
 /*Caixa final*/
+#end-box {
+    text-align: center;
+    border-radius: 30px;
+    background-color: var(--secondColor);
+    width: 60vw;
+    height: 75vh;
+    margin: 12vh auto 1vh;
+    padding: 5px;
+}
+
+#end-game-title {
+    font-size: 3em;
+    padding-top: 5%;
+    letter-spacing: 1.5px;
+    vertical-align: sub;
+}
+
+#end-game-message {
+    text-align: center;
+}
+
+#end-box h3 {
+    padding: 10px;
+}
+
+#restart-game-button {
+    font-size: xx-large;
+    border-radius: 30px;
+    height: 25%;
+    width: 90%;
+}

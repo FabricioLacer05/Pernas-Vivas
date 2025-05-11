@@ -21,12 +21,12 @@
     <!--Links-->
     <link rel="icon" href="res/imgs/Icon.ico">
     <link rel="stylesheet" href="style.css">
-    <script src="game-script.js" defer></script>
-    <script src="showQuestion-script.js" defer></script>
+    <script src="main-script.js" defer></script>
+    <script src="question-script.js" defer></script>
     <script src="audio-script.js" defer></script>
 
-    <!--Áudio - Músicas e efeitos sonoros-->
-    <audio id="music" loop>
+    <!--Áudio - Músicas e efeitos sonoros, controlado por script-->
+    <audio id="music">
         <source src="" type="audio/wav">
         Seu navegador não suporta áudio em HTML
     </audio>
@@ -39,16 +39,17 @@
     <!--Caixa inicial-->
     <div id="start-box">
         <h1 id="game-title">O Desafio dos Mexilhões</h1>
-        <button id="start-game-button" onclick="startGame()">Começar!</button>
+        <button id="start-game-button">Começar!</button>
     </div>
 
     <!--Caixa principal-->
     <div id="main-box">
         <!--Cabeçalho da caixa principal-->
         <div id="main-box-header">
-            <h2 id="questionNumber">Questão 1</h2>
+            <h2 id="questionNumber">Questão 0</h2>
             <h4 id="points">Pontos: 0</h4>
             <h4 id="wrongAnswers">Erros: 0</h4>
+            <h4 id="timer">0:00</h4>
         </div>
 
         <!--Caixa de quetões-->
@@ -57,28 +58,33 @@
                 <h3 id="question-title"></h3>
             </div>
             <div id="question-body">
-            </div>
-            <div id="question-footer">
-                <div id="question-footer-header">
-                    <h4 id="qustion-footer-title"></h4>
+                <div id="question-content">
                 </div>
-                <div id="question-footer-input">
+                <div id="question-footer">
+                    <div id="question-footer-header">
+                        <h4 id="question-footer-title"></h4>
+                    </div>
+                    <div id="question-footer-input">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Caixa de mensagens-->
-    <div id="message-box">
-        <p id="message"></p>
-    </div>
-
     <!--Caixa de fim de jogo-->
     <div id="end-box">
         <h1 id="end-game-title">Fim de jogo!</h1>
-        <p id="end-game-points"></p>
+        <p id="end-game-message"></p>
         <h3>Muito obrigado por nos visitar! :)</h3>
-        <button id="restart-game-button" onclick="restartGame()">Jogar de novo!</button>
+        <button id="restart-game-button">Jogar de novo!</button>
+    </div>
+
+    <!--Botão de controle de áudio-->
+    <button id="mute-audio"><img id="mute-img" src="./res/imgs/Musica1.png"></button>
+
+    <!--Caixa de mensagens-->
+    <div id="message-box">
+        <p id="message"></p>
     </div>
 </body>
 </html>

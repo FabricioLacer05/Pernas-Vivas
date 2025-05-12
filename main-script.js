@@ -14,13 +14,14 @@ function loadGame() {
     displayElement("start-box", true);
     displayElement("main-box", false);
     displayElement("end-box", false);
+    displayElement("message-box", false);
     playMusic();
 }
 // Inicia o jogo, levando o usuário à 1° questão
 function startGame() {
     displayElement("start-box", false);
     displayElement("main-box", true);
-    showQuestion(1);
+    showQuestion(currQuestion);
     timer = setInterval(countTime, 1000);
 }
 // Atualiza as informações e progride para a próxima questão
@@ -81,7 +82,7 @@ function showMessage(isAnswerCorrect) {
     }
     document.getElementById("message").innerText = mes;
     displayElement("message-box", true);
-    setTimeout(() => {displayElement("message-box", false)}, 3000);
+    setTimeout(() => {displayElement("message-box", false)}, 1500);
 }
 // Esconde ou mostra um elemento
 function displayElement(id, force) {

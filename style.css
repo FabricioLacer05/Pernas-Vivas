@@ -121,6 +121,7 @@ button:hover {
     justify-content: center;
     margin: 1% auto;
     padding: 5px;
+    text-align: center;
 }
 /*Questões 1 e 2*/
 #question-content {
@@ -129,7 +130,7 @@ button:hover {
     padding: 20px;
     margin: 1%;
 }
-#question-content img {
+#question-content img:not(#mounted-perna-img) {
     width: 75%;
     display: block;
     margin: auto;
@@ -148,10 +149,11 @@ button:hover {
 #question-footer-header {
     border: 2px solid var(--firstColor);
     border-radius: 30px;
-    padding: 5px;
+    padding: 10px;
 }
 #question-footer-title {
     font-size: 1.25em;
+    text-align: center;
 }
 #question-footer-input {
     border: 2px solid var(--firstColor);
@@ -161,39 +163,91 @@ button:hover {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 90%;
+    height: fit-content;
     width: 90%;
-    margin: 3% auto;
+    margin: 1% auto;
 }
-#question-footer-input button {
+#question-footer-input button:not(.invader-option):not(.native-option) {
     width: 65%;
     padding: 20px;
     border-radius: 30px;
     font-size: 1em;
     margin: 10px;
 }
-#question-footer-input button img {
+#question-footer-input button img:not(.invader-option img):not(.native-option img) {
     width: 25%;
 }
 /*Questões 3 a 6*/
-/*TODO: Continuar aqui*/
+
 /*Questão 7*/
+#mounted-perna-img {
+    margin: 2%;
+    width: 40%;
+    border-radius: 30px;
+}
+#empty-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 2% auto;
+}
+.empty-box {
+    border: 2px solid var(--accentColor);
+    border-radius: 15px;
+    padding: 5px;
+}
+#eb1 {
+    width: 20%;
+    margin-top: 18%;
+}
+#eb2 {
+    width: 30%;
+    margin-top: -15%;
+    margin-left: 2%;
+}
+#eb3 {
+    width: 20%;
+    margin-top: 25%;
+    margin-left: 2%;
+}
+.empty-box img {
+    display: block;
+    margin: auto;
+}
+.part-box {
+    width: 40%;
+    height: 40%;
+    border: 2px solid var(--accentColor);
+    border-radius: 15px;
+    margin: 2%;
+    padding: 5px;
+}
 /*Questão 8*/
+.invader-option, .native-option {
+    border-radius: 30px;
+    padding: 5px;
+    margin: 0.5%;
+    width: 10%;
+}
+.invader-option img, .native-option img {
+    width: 100%;
+    border-radius: 30px;
+}
 /*Caixa de mensagens*/
 #message-box {
     background-color: var(--accentColor);
     position: fixed;
-    width: 50%;
+    width: 25vw;
+    bottom: 0vh;
     height: fit-content;
     padding: 20px;
     text-align: center;
-    top: 25%;
-    left: 25%;
     border-radius: 30px;
 }
 #message {
-    font-size: 2.5em;
-    margin: 30% auto;
+    font-size: 1.5em;
+    margin: 10px auto;
 }
 /*Botão de áudio*/
 #mute-audio {
@@ -201,5 +255,8 @@ button:hover {
     height: 25%;
     border-radius: 15px;
     padding: 10px;
-    margin: 2% auto;
+    margin: 1% auto;
+}
+#mute-audio img {
+    border-radius: 15px;
 }

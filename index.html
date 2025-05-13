@@ -19,16 +19,15 @@
     Atividade web programada por Fabrício Lacerda
     ">
     <!--Links-->
-    <script src="main-script.js" defer></script>
-    <script src="question-script.js" defer></script>
-    <script src="audio-script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/questions.js" defer></script>
+    <script src="./scripts/audio.js" defer></script>
+    <link rel="stylesheet" media="screen and (max-width: 839px)" href="./styles/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width: 840px)" href="./styles/desktop.css">
     <link rel="icon" href="res/imgs/Icon.ico">
-
     <!--Áudio - Músicas e efeitos sonoros, controlado por script-->
     <audio id="music">
         <source src="" type="audio/wav">
-        Seu navegador não suporta áudio em HTML
     </audio>
     <audio id="sfx">
         <source src="" type="audio/wav">
@@ -38,10 +37,9 @@
 <body onload="loadGame()">
     <!--Caixa inicial-->
     <div id="start-box">
-        <h1 id="game-title">O Desafio dos Mexilhões</h1>
+        <h1 id="game-title" hidden>O Desafio dos Mexilhões</h1>
         <button id="start-game-button">Começar!</button>
     </div>
-
     <!--Caixa principal-->
     <div id="main-box">
         <!--Cabeçalho da caixa principal-->
@@ -70,7 +68,6 @@
             </div>
         </div>
     </div>
-
     <!--Caixa de fim de jogo-->
     <div id="end-box">
         <h1 id="end-game-title">Fim de jogo!</h1>
@@ -78,10 +75,8 @@
         <h3>Muito obrigado por nos visitar! :)</h3>
         <button id="restart-game-button">Jogar de novo!</button>
     </div>
-
     <!--Botão de controle de áudio-->
     <button id="mute-audio"><img id="mute-img" src="./res/imgs/Musica1.png"></button>
-
     <!--Caixa de mensagens-->
     <div id="message-box">
         <p id="message"></p>

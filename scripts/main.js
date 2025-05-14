@@ -1,10 +1,26 @@
 // Variáveis gerais
-const QUESTION_ANSWERS = ["MARROM", "VERDE", "DOURADO E VERDE", "MARROM", "BRASIL", "INDOPACIFICO", ["BISSO", "VALVA", "PE"], "NATIVO"];
+const QUESTION_ANSWERS = [
+    "MARROM", // 1
+    "VERDE", // 2
+    "DOURADO E VERDE", // 3
+    "MARROM", // 4
+    "BRASIL", // 5
+    "INDOPACIFICO", // 6
+    ["BISSO", "VALVA", "PE"], // 7
+    "NATIVO" // 8
+];
 const NUMBER_OF_QUESTIONS = 8;
-let points = 0, wrngAnswers = 0, timer, min = 0, secs = 0;
-let currQuestion = 1;
+let points = 0,
+    wrngAnswers = 0,
+    timer,
+    min = 0,
+    secs = 0,
+    currQuestion = 1;
 // Variáveis da questão 7
-let isPartPicked = false, partPicked = "", lastPartPicked = "", parts = [];
+let isPartPicked = false,
+    partPicked = "",
+    lastPartPicked = "",
+    parts = [];
 // Listeners
 document.getElementById("start-game-button").addEventListener("click", startGame);
 document.getElementById("restart-game-button").addEventListener("click", restartGame);

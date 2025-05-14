@@ -1,31 +1,32 @@
 // Variáveis
-let music = document.getElementById("music");
-let sfx = document.getElementById("sfx");
-let isMusicMuted = false;
+let music = document.getElementById("music"),
+    sfx = document.getElementById("sfx"),
+    isMusicMuted = false;
 // Listeners
 music.addEventListener("ended", playMusic);
 document.getElementById("mute-audio").addEventListener("click", toggleBGMusic);
 // =========================================================================================================
 // Toca a música de fundo, uma das 3 opções disponíveis
 function playMusic() {
-    let bgm; let n = Math.floor(Math.random() * 3);
-    isMusicMuted = true;
-    switch(n) {
-        case 0:
-            bgm = "./res/audios/music/sergequadrado_sunrise-dub-loop.wav";
-            music.volume = 0.2;
-            break;
-        case 1:
-            bgm = "./res/audios/music/code box_laidback-steps.wav";
-            music.volume = 0.2;
-            break;
-        case 2:
-            bgm = "./res/audios/music/code box_tropical-cruise.wav";
-            music.volume = 0.25;
-            break;
+    if(!isMusicMuted) {
+        let bgm = "", n = Math.floor(Math.random() * 3);
+        switch(n) {
+            case 0:
+                bgm = "./res/audios/music/sergequadrado_sunrise-dub-loop.wav";
+                music.volume = 0.2;
+                break;
+            case 1:
+                bgm = "./res/audios/music/code box_laidback-steps.wav";
+                music.volume = 0.2;
+                break;
+            case 2:
+                bgm = "./res/audios/music/code box_tropical-cruise.wav";
+                music.volume = 0.25;
+                break;
+        }
+        music.setAttribute("src", bgm);
+        music.play();
     }
-    music.setAttribute("src", bgm);
-    music.play();
 }
 // Toca efeito sonoro
 function playSFX(name) {
@@ -36,12 +37,12 @@ function playSFX(name) {
 // Pausa ou retoma a música de fundo
 function toggleBGMusic() {
     if(isMusicMuted) {
-        music.pause();
         isMusicMuted = false;
-        document.getElementById("mute-img").setAttribute("src", "./res/imgs/Musica0.png");
-    } else {
-        music.play();
-        isMusicMuted = true;
+        playMusic();
         document.getElementById("mute-img").setAttribute("src", "./res/imgs/Musica1.png");
+    } else {
+        isMusicMuted = true;
+        music.pause();
+        document.getElementById("mute-img").setAttribute("src", "./res/imgs/Musica0.png");
     }
 }

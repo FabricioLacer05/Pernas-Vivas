@@ -1,27 +1,10 @@
 /*Elementos gerais*/
-:root {
-    --firstColor: hsl(202, 90%, 75%);
-    --secondColor: hsl(202, 90%, 60%);
-    --accentColor: hsl(187, 100%, 55%);
-}
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Candara", "Trebuchet MS", "Serif", "Arial", "Times new Roman";
-}
 body {
     background-image: url("../res/imgs/FundoMobile.png");
     background-repeat: repeat-y;
     background-size: 100vw 100vh;
     display: flex;
     flex-direction: column;
-}
-button {
-    border: none;
-}
-button:hover {
-    background-color: var(--accentColor);
-    cursor: pointer;
 }
 /*Caixas inicial e final*/
 #start-box, #end-box {
@@ -127,7 +110,7 @@ button:hover {
     padding: 5px;
     text-align: center;
 }
-/*Questões 1 e 2*/
+/*Questões 1 a 6*/
 #question-content {
     border-radius: 30px;
     padding: 10px;
@@ -179,8 +162,6 @@ button:hover {
     margin: 2px;
     border-radius: 15px;
 }
-/*Questões 3 a 6*/
-
 /*Questão 7*/
 #mounted-perna-img {
     margin: 2%;
@@ -256,11 +237,7 @@ button:hover {
 /*Botão de áudio*/
 #mute-audio {
     width: fit-content;
-    height: 25%;
     border-radius: 15px;
     padding: 10px;
-    margin: 1% auto;
-}
-#mute-audio img {
-    border-radius: 15px;
+    margin: auto;
 }

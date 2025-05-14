@@ -1,6 +1,6 @@
 // Mostra uma questão e esconde as outras e também atualiza o número da questão na página
 function showQuestion(num) {
-    let headerTitle = "", bodyContent = "", footerTitle = "", footerContent = "", randOptions = [""];
+    let headerTitle = "", bodyContent = "", footerTitle = "", footerContent = "", options = [""];
     if(num <= NUMBER_OF_QUESTIONS) {
         switch(num) {
             case 1:
@@ -10,15 +10,12 @@ function showQuestion(num) {
                     <img src = "res/imgs/Perna.png">
                 `;
                 footerTitle = "Clique numa das opções abaixo:";
-                randOptions = [
+                options = [
                     `<button class="answer-button" value="MARROM" onclick="checkAnswer(1, this.getAttribute('value'))"><p>Mexilhão-marrom</p></button>`,
                     `<button class="answer-button" value="VERDE" onclick="checkAnswer(1, this.getAttribute('value'))"><p>Mexilhão-verde</p></button>`,
                     `<button class="answer-button" value="DOURADO" onclick="checkAnswer(1, this.getAttribute('value'))"><p>Mexilhão-dourado</p></button>`
                 ];
-                randOptions.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
-                for(let i = 0; i < randOptions.length; i++) {
-                    footerContent += randOptions[i];
-                };
+                footerContent = randomizeFooterOpts(options);
                 break;
             case 2:
                 headerTitle = "Qual é este mexilhão?";
@@ -27,21 +24,18 @@ function showQuestion(num) {
                     <img src="res/imgs/Viridis.png">
                 `;
                 footerTitle = "Clique numa das opções abaixo:";
-                randOptions = [
+                options = [
                     `<button class="answer-button" value="VERDE" onclick="checkAnswer(2, this.getAttribute('value'))"><p>Mexilhão-verde</p></button>`,
                     `<button class="answer-button" value="MARROM" onclick="checkAnswer(2, this.getAttribute('value'))"><p>Mexilhão-marrom</p></button>`,
                     `<button class="answer-button" value="DOURADO" onclick="checkAnswer(2, this.getAttribute('value'))"><p>Mexilhão-dourado</p></button>`
                 ];
-                randOptions.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
-                for(let i = 0; i < randOptions.length; i++) {
-                    footerContent += randOptions[i];
-                };
+                footerContent = randomizeFooterOpts(options);
                 break;
             case 3:
                 headerTitle = "Quais espécies de mexilhão são consideradas INVASORAS?";
                 bodyContent = ``;
                 footerTitle = "Escolha a opção que contenha apenas espécies INVASORAS:";
-                randOptions = [
+                options = [
                     `<button class="answer-button" value="DOURADO E VERDE" onclick="checkAnswer(3, this.getAttribute('value'))"><img src="res/imgs/Fortunei.png"><img src="res/imgs/Viridis.png"><p>Dourado e verde</p></button>`,
                     `<button class="answer-button" value="MARROM E VERDE" onclick="checkAnswer(3, this.getAttribute('value'))"><img src="res/imgs/Perna.png"><img src="res/imgs/Viridis.png"><p>Marrom e verde</p></button>`,
                     `<button class="answer-button" value="DOURADO E MARROM" onclick="checkAnswer(3, this.getAttribute('value'))"><img src="res/imgs/Fortunei.png"><img src="res/imgs/Perna.png"><p>Dourado e marrom</p></button>`,
@@ -49,56 +43,44 @@ function showQuestion(num) {
                     `<button class="answer-button" value="MARROM" onclick="checkAnswer(3, this.getAttribute('value'))"><img src="res/imgs/Perna.png"><p>Apenas o marrom</p></button>`
                 ];
                 footerTitle = "Clique numa das opções abaixo:";
-                randOptions.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
-                for(let i = 0; i < randOptions.length; i++) {
-                    footerContent += randOptions[i];
-                }
+                footerContent = randomizeFooterOpts(options);
                 break;
             case 4:
                 headerTitle = "Quais espécies de mexilhão são consideradas NATIVAS?";
                 bodyContent = ``;
                 footerTitle = "Escolha a opção que contenha apenas espécies NATIVAS:";
-                randOptions = [
+                options = [
                     `<button class="answer-button" value="MARROM" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/imgs/Perna.png"><p>Apenas o marrom</p></button>`,
                     `<button class="answer-button" value="DOURADO E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/imgs/Fortunei.png"><img src="res/imgs/Viridis.png"><p>Dourado e verde</p></button>`,
                     `<button class="answer-button" value="MARROM E VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/imgs/Perna.png"><img src="res/imgs/Viridis.png"><p>Marrom e verde</p></button>`,
                     `<button class="answer-button" value="DOURADO E MARROM" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/imgs/Fortunei.png"><img src="res/imgs/Perna.png"><p>Dourado e marrom</p></button>`,
                     `<button class="answer-button" value="VERDE" onclick="checkAnswer(4, this.getAttribute('value'))"><img src="res/imgs/Viridis.png"><p>Apenas o verde</p></button>`
                 ];
-                randOptions.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
-                for(let i = 0; i < randOptions.length; i++) {
-                    footerContent += randOptions[i];
-                }
+                footerContent = randomizeFooterOpts(options);
                 break;
             case 5:
                 headerTitle = "Onde o mexilhão-marrom vive naturalmente?";
                 bodyContent = ``;
                 footerTitle = "Selecione uma opção:";
-                randOptions = [
+                options = [
                     `<button class="answer-button" value="BRASIL" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/imgs/Costa Brasil.png"><p>Costa do Brasil</p></button>`,
                     `<button class="answer-button" value="INDOPACIFICO" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/imgs/Indo Pacifico.png"><p>Oceanos Índico e Pacífico</p></button>`,
                     `<button class="answer-button" value="MEDITERRANEO" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/imgs/Mediterraneo.png"><p>Mar Mediterrâneo</p></button>`,
                     `<button class="answer-button" value="BACIAPARANA" onclick="checkAnswer(5, this.getAttribute('value'))"><img src="res/imgs/Bacia Parana.png"><p>Bacia do Paraná, principalmente</p></button>`
                 ];
-                randOptions.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
-                for(let i = 0; i < randOptions.length; i++) {
-                    footerContent += randOptions[i];
-                }
+                footerContent = randomizeFooterOpts(options);
                 break;
             case 6:
                 headerTitle = "Onde o mexilhão-verde vive naturalmente?";
                 bodyContent = ``;
                 footerTitle = "Selecione uma opção:";
-                randOptions = [
+                options = [
                     `<button class="answer-button" value="INDOPACIFICO" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/imgs/Indo Pacifico.png"><p>Oceanos Índico e Pacífico</p></button>`,
                     `<button class="answer-button" value="BRASIL" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/imgs/Costa Brasil.png"><p>Costa do Brasil</p></button>`,
                     `<button class="answer-button" value="MEDITERRANEO" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/imgs/Mediterraneo.png"><p>Mar Mediterrâneo</p></button>`,
                     `<button class="answer-button" value="BACIAPARANA" onclick="checkAnswer(6, this.getAttribute('value'))"><img src="res/imgs/Bacia Parana.png"><p>Bacia do Paraná, principalmente</p></button>`
                 ];
-                randOptions.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
-                for(let i = 0; i < randOptions.length; i++) {
-                    footerContent += randOptions[i];
-                }
+                footerContent = randomizeFooterOpts(options);
                 break;
             case 7:
                 headerTitle = "Monte a anatomia externa do mexilhão-marrom!";
@@ -245,4 +227,13 @@ function putPartInBox(box) {
     } else {
         alert("Selecione uma das peças abaixo para colocar aqui!");
     }
+}
+// Randomiza a ordem das opções de resposta de cada questão e as adiciona ao conteúdo do rodapé dela
+function randomizeFooterOpts(options) {
+    let innerHTML = "";
+    options.sort(function(){return 0.5 - Math.random()}); // Embaralha as opções de resposta
+    for(let i = 0; i < options.length; i++) {
+        innerHTML += options[i];
+    }
+    return innerHTML;
 }

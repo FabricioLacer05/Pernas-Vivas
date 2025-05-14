@@ -1,54 +1,35 @@
 /*Elementos gerais*/
-:root {
-    --firstColor: hsl(202, 90%, 75%);
-    --secondColor: hsl(202, 90%, 60%);
-    --accentColor: hsl(187, 100%, 55%);
-}
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Candara", "Trebuchet MS", "Serif", "Arial", "Times new Roman";
-}
 body {
-    background-image: url("../res/imgs/FundoMobile.png");
-    background-repeat: repeat;
-    background-size: 100vw 100.5vh;
+    background-image: url("../res/imgs/FundoMobile.png"); /*TODO: Alterar para fundo desktop*/
+    background-repeat: repeat-y;
+    background-size: 100vw 100vh;
     display: flex;
     flex-direction: column;
-}
-button {
-    border: none;
-}
-button:hover {
-    background-color: var(--accentColor);
-    cursor: pointer;
 }
 /*Caixas inicial e final*/
 #start-box, #end-box {
     text-align: center;
-    border-radius: 30px;
-    width: 60vw;
-    height: 35vh;
-    margin: 12vh auto 1vh;
-    padding: 20px;
+    width: 40vw;
+    margin: auto;
+    padding: 40px;
     display: flex;
     flex-direction: column;
 }
 #end-box {
-    margin-top: 20%;
+    margin: 20vh auto;
     background-color: var(--firstColor);
+    border-radius: 30px;
 }
 #game-title, #end-game-title {
     font-size: 3em;
-    padding-top: 5%;
     letter-spacing: 1.5px;
     vertical-align: sub;
 }
 #start-game-button, #restart-game-button {
     font-size: xx-large;
+    height: 30%;
+    width: 50%;
     border-radius: 30px;
-    height: 25%;
-    width: 90%;
 }
 #start-game-button {
     margin-top: 30%;
@@ -133,6 +114,7 @@ button:hover {
     padding: 5px;
     text-align: center;
 }
+/*Questões 1 a 6*/
 #question-content {
     border-radius: 30px;
     padding: 20px;
@@ -261,11 +243,7 @@ button:hover {
 /*Botão de áudio*/
 #mute-audio {
     width: fit-content;
-    height: 25%;
     border-radius: 15px;
     padding: 10px;
-    margin: 8% auto;
-}
-#mute-audio img {
-    border-radius: 15px;
+    margin: auto;
 }

@@ -86,7 +86,7 @@ function showQuestion(num) {
                 headerTitle = "Monte a anatomia externa do mexilhão-marrom!";
                 bodyContent =
                 `
-                    <p>Clique nas peças abaixo e clique nas áreas vazias onde você quer colocar a peça. Clique em outra peça para soltá-la.</p>
+                    <p id="que7-msg">Clique nas peças abaixo e depois na área vazia onde você quer colocar a peça. Para soltar uma peça, clique nela de novo ou em qualquer outra.</p>
                     <img id="mounted-perna-img" src="./res/imgs/Perna.png">
                     <p>Referência</p>
 
@@ -138,12 +138,14 @@ function showQuestion(num) {
             displayElement("question-footer-header", true);
         } else if(num == 7){ // Questão 7
             displayElement("question-content", true);
-            displayElement("question-footer-header", false);            
+            displayElement("question-footer-header", false);     
+            document.getElementById("question-body").style.cursor = "grab";       
         } else if(num == 8) { // Questão 8
             displayElement("question-content", false);
             displayElement("question-footer-header", true);
             document.getElementById("question-footer-input").style.flexDirection = "row";
             document.getElementById("question-footer-input").style.flexWrap = "wrap";
+            document.getElementById("question-body").style.cursor = "pointer";
         }
     } else {
         endGame();
@@ -198,11 +200,13 @@ function pickUpPart(part) {
         isPartPicked = true;
         partPicked = part;
         //alert("Pegou " + part);
+        document.getElementById("question-body").style.cursor = "grabbing";
     } else {
         lastPartPicked = partPicked;
         partPicked = null;
         isPartPicked = false;
         //alert("Soltou " + lastPartPicked);
+        document.getElementById("question-body").style.cursor = "grab";
     }
 }
 // (Questão 7) "Coloca" uma parte numa das caixas vazias
@@ -224,6 +228,7 @@ function putPartInBox(box) {
         isPartPicked = false;
         lastPartPicked = partPicked;
         partPicked = "";
+        document.getElementById("question-body").style.cursor = "grab";
     } else {
         alert("Selecione uma das peças abaixo para colocar aqui!");
     }

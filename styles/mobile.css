@@ -8,19 +8,13 @@ body {
 }
 /*Caixas inicial e final*/
 #start-box, #end-box {
-    text-align: center;
-    width: 75vw;
-    height: 45vh;
-    margin: 12vh auto 1vh;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-#end-box {
     background-color: var(--firstColor);
     margin-top: 30vh;
-    height: 90vh;
     border-radius: 30px;
+    text-align: center;
+    width: 75vw;
+    margin: 28vh auto 1vh;
+    padding: 20px;
 }
 #game-title, #end-game-title {
     font-size: 2em;
@@ -28,12 +22,14 @@ body {
     letter-spacing: 1.5px;
     vertical-align: sub;
 }
+#game-title {
+    display: none;
+}
 #start-game-button, #restart-game-button {
     font-size: xx-large;
     border-radius: 30px;
+    padding: 20px;
     width: 90%;
-    height: 25%;
-    margin-top: 30%;
 }
 #end-game-message {
     text-align: center;
@@ -42,7 +38,8 @@ body {
     margin: auto;
 }
 #end-box h3 {
-    padding: 2%;
+    font-size: 1.45em;
+    padding: 4%;
     margin: auto;
 }
 /*Caixa principal*/
@@ -116,6 +113,10 @@ body {
     padding: 10px;
     margin: 1%;
 }
+#que7-msg {
+    font-size: 1.2em;
+    margin: auto auto 10%;
+}
 #question-content img:not(#mounted-perna-img) {
     width: 75%;
     display: block;
@@ -151,14 +152,14 @@ body {
     margin: 1% auto;
 }
 #question-footer-input button:not(.invader-option):not(.native-option) {
-    width: 85%;
+    width: 100%;
     padding: 10px;
     border-radius: 30px;
     margin: 10px;
     font-size: 1em;
 }
 #question-footer-input button img:not(.invader-option img):not(.native-option img) {
-    width: 75%;
+    width: 48%;
     margin: 2px;
     border-radius: 15px;
 }
@@ -179,9 +180,6 @@ body {
     border: 2px solid var(--accentColor);
     border-radius: 15px;
     padding: 5px;
-}
-.empty-box:hover {
-    cursor: grab;
 }
 #eb1 {
     width: 25%;
@@ -207,7 +205,6 @@ body {
     border-radius: 15px;
     margin: 2%;
     padding: 5px;
-    cursor: grab;
 }
 /*Questão 8*/
 .invader-option, .native-option {
@@ -224,11 +221,14 @@ body {
 #message-box {
     background-color: var(--accentColor);
     position: fixed;
-    width: 100vw;
-    top: 40vh;
+    width: 50vw;
+    left: 50vw;
+    bottom: 50vh;
+    transform: translate(-50%, -50%);
     height: fit-content;
     padding: 10px;
     text-align: center;
+    border-radius: 30px;
 }
 #message {
     font-size: 1.2em;

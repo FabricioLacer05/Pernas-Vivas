@@ -8,34 +8,24 @@ body {
 }
 /*Caixas inicial e final*/
 #start-box, #end-box {
-    text-align: center;
-    width: 40vw;
-    margin: auto;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-}
-#end-box {
-    margin: 20vh auto;
     background-color: var(--firstColor);
     border-radius: 30px;
+    text-align: center;
+    width: 30vw;
+    margin: 28vh auto 1vh;
+    padding: 20px;
 }
 #game-title, #end-game-title {
     font-size: 3em;
-    letter-spacing: 1.5px;
-    vertical-align: sub;
+}
+#game-title {
+    display: none;
 }
 #start-game-button, #restart-game-button {
     font-size: xx-large;
-    height: 30%;
-    width: 50%;
+    width: 60%;
+    padding: 10px;
     border-radius: 30px;
-}
-#start-game-button {
-    margin-top: 30%;
-}
-#restart-game-button {
-    margin-top: 2%;
 }
 #end-game-message {
     text-align: center;
@@ -44,7 +34,8 @@ body {
     margin: auto;
 }
 #end-box h3 {
-    padding: 2%;
+    font-size: 1.5em;
+    padding: 3%;
     margin: auto;
 }
 /*Caixa principal*/
@@ -120,6 +111,10 @@ body {
     padding: 20px;
     margin: 1%;
 }
+#que7-msg {
+    font-size: 1.5em;
+    font-weight: bold;
+}
 #question-content img:not(#mounted-perna-img) {
     width: 75%;
     display: block;
@@ -184,9 +179,6 @@ body {
     border-radius: 15px;
     padding: 5px;
 }
-.empty-box:hover {
-    cursor: grab;
-}
 #eb1 {
     width: 20%;
     margin-top: 18%;
@@ -212,7 +204,6 @@ body {
     border-radius: 15px;
     margin: 2%;
     padding: 5px;
-    cursor: grab;
 }
 /*Questão 8*/
 .invader-option, .native-option {
@@ -230,7 +221,8 @@ body {
     background-color: var(--accentColor);
     position: fixed;
     width: 25vw;
-    bottom: 0vh;
+    left: 5vw;
+    bottom: 5vh;
     height: fit-content;
     padding: 20px;
     text-align: center;

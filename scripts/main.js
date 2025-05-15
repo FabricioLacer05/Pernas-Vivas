@@ -22,7 +22,6 @@ let isPartPicked = false,
     lastPartPicked = "",
     parts = [];
 // Listeners
-this.addEventListener("load", loadGame);
 document.getElementById("start-game-button").addEventListener("click", startGame);
 document.getElementById("restart-game-button").addEventListener("click", restartGame);
 // =========================================================================================================

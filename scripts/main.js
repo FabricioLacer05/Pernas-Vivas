@@ -87,13 +87,11 @@ function restartGame() {
 }
 // Atualiza os pontos de acordo se o jogador acertou ou errou a questão, premiando-o ou penalizando-o
 function setPoints(isAnswerCorrect) {
-    if(isAnswerCorrect && wrngAnswers == 0) {
+    if(isAnswerCorrect) {
         points += 125; // 125 * 8 = 1000
-    } else if(isAnswerCorrect) {
-        points += 62; // 62 * 8 ~= 500 (= 496)
     } else {
         if(points > 0) {
-            points -= 31; // 31 = 62 / 2
+            points -= 62; // =~ 125 / 2
         }
         wrngAnswers++;
     }

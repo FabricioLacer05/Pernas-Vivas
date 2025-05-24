@@ -33,7 +33,7 @@ body {
     padding: 20px;
     width: 90%;
 }
-#end-game-message {
+#end-box p {
     text-align: center;
     padding: 3%;
     font-size: 1.4em;

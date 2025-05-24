@@ -1,0 +1,37 @@
+/*Elementos gerais*/
+:root {
+    --firstColor: hsl(202, 90%, 75%);
+    --secondColor: hsl(202, 90%, 60%);
+    --accentColor: hsl(187, 100%, 55%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Candara", "Trebuchet MS", "Serif", "Arial", "Times new Roman";
+}
+button {
+    border: none;
+    transition: all ease-out 0.2s;
+}
+button:hover {
+    background-color: var(--accentColor);
+    transform: scale(105%, 105%);
+    cursor: pointer;
+}
+/*Caixa principal*/
+#question-content img {
+    transition: all ease-in-out 0.1s;
+}
+#question-content img:hover {
+    transform: scale(102%, 102%);
+}
+.part-box {
+    transition: all ease-in-out 0.1s;
+}
+.part-box:hover {
+    transform: scale(103%, 103%);
+}
+/*Botão de áudio*/
+#mute-audio img {
+    border-radius: 15px;
+}

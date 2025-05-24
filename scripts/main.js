@@ -51,34 +51,17 @@ function endGame() {
     clearInterval(timer);
     displayElement("main-box", false);
     displayElement("end-box", true);
-    if(wrngAnswers == 0) {
-        if(secs < 10) {
-            document.getElementById("end-game-message").innerHTML =`
-            Pontos: <b>${points}</b> pontos!
-            Tempo: <b>${min}:0${secs}</b>!
-            Erros: <b>ZERO erros</b>! Parabéns!!!
-            `;
-        } else {
-            document.getElementById("end-game-message").innerHTML =`
-            Pontos: <b>${points}</b> pontos!
-            Tempo: <b>${min}:${secs}</b>!
-            Erros: <b>ZERO erros</b>! Parabéns!!!
-            `;
-        }
+    // --------------------------------
+    document.getElementById("end-game-points").innerHTML = `Pontos: <b>${points}</b> pontos!`;
+    if(secs < 10) {
+        document.getElementById("end-game-time").innerHTML = `Tempo: <b>${min}:0${secs}</b>!`;
     } else {
-        if(secs < 10) {
-            document.getElementById("end-game-message").innerHTML =`
-            Pontos: <b>${points}</b> pontos!
-            Tempo: <b>${min}:0${secs}</b>!
-            Erros: <b>${wrngAnswers}</b> das ${NUMBER_OF_QUESTIONS} questões!
-            `;
-        } else {
-            document.getElementById("end-game-message").innerHTML =`
-            Pontos: <b>${points}</b> pontos!
-            Tempo: <b>${min}:${secs}</b>!
-            Erros: <b>${wrngAnswers}</b> das ${NUMBER_OF_QUESTIONS} questões!
-            `;
-        }
+        document.getElementById("end-game-time").innerHTML = `Tempo: <b>${min}:0${secs}</b>!`;
+    }
+    if(wrngAnswers == 0) {
+        document.getElementById("end-game-errors").innerHTML = `Erros: <b>ZERO erros</b>! Parabéns!!!`; 
+    } else {
+        document.getElementById("end-game-errors").innerHTML = `Erros: <b>${wrngAnswers}</b> das ${NUMBER_OF_QUESTIONS} questões!`;
     }
 }
 // Leva o jogador de volta à primeira tela, reiniciando o jogo
@@ -90,7 +73,7 @@ function setPoints(isAnswerCorrect) {
     if(isAnswerCorrect) {
         points += 125; // 125 * 8 = 1000
     } else {
-        if(points > 0) {
+        if(!(points - 62 <= 0)) {
             points -= 62; // =~ 125 / 2
         }
         wrngAnswers++;

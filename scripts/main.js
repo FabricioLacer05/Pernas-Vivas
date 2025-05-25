@@ -56,7 +56,7 @@ function endGame() {
     if(secs < 10) {
         document.getElementById("end-game-time").innerHTML = `Tempo: <b>${min}:0${secs}</b>!`;
     } else {
-        document.getElementById("end-game-time").innerHTML = `Tempo: <b>${min}:0${secs}</b>!`;
+        document.getElementById("end-game-time").innerHTML = `Tempo: <b>${min}:${secs}</b>!`;
     }
     if(wrngAnswers == 0) {
         document.getElementById("end-game-errors").innerHTML = `Erros: <b>ZERO erros</b>! Parabéns!!!`; 
